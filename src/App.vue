@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <h1>{{ message }}</h1>
+  <input type="text" placeholder="Your message..." v-model="message" />
+  <br />
+  <h1>The current count is {{ $store.state.count }}</h1>
+  <!-- <counter v-bind:count="value" v-on:update:count="value = $event" /> -->
+  <counter />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  import Counter from "./components/counter";
+  export default {
+    data() {
+      return {
+        message: "Hej världen!"
+      };
+    },
+    components: {
+      Counter
+    }
+  };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  body {
+    font-family: sans-serif;
+  }
+  h1 {
+    text-decoration: underline;
+  }
 </style>
