@@ -1,4 +1,6 @@
-# hello-world
+# My first vue project
+
+This is a counter done with vue.js for learn how this awesome framework works! 
 
 ## Project setup
 ```
